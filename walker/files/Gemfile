@@ -1,0 +1,112 @@
+source 'https://rubygems.org'
+require 'rbconfig'
+HOST_OS = RbConfig::CONFIG['host_os']
+
+gem 'bundler', '1.2.3'
+
+gem 'rails', '3.2.11'
+gem 'rake', '10.0.3'
+
+gem 'pg', '0.14.1'
+
+gem 'dalli', '2.3.0'
+
+gem 'will_paginate'
+
+gem 'mobile-fu', '1.1.0'
+
+gem 'hpricot', '0.8.6'
+
+gem 'nokogiri', '1.5.5'
+
+# ops
+gem 'foreman', '0.60.2'
+gem 'unicorn-rails', '0.0.1'
+gem 'exception_notification', '3.0.0'
+gem 'delayed_job'
+gem 'daemons', '1.1.9'
+
+
+# rendering
+gem 'coffee-filter', '0.1.1'
+gem 'json_builder', '3.1.7'
+gem 'haml-rails', '0.3.5'
+
+
+# images
+gem 'rack-cache', '1.2', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.12'
+gem 'image_optim',  '0.7.1'
+gem 'mini_exiftool', '1.6.0'
+gem 'fog', '1.8.0'
+
+
+# javascripts
+gem 'jquery-rails', '2.1.3'
+gem 'rack-pjax', '0.6.0'
+
+
+# admin
+gem 'simple_form', '2.0.4'
+gem 'nested_form', '0.3.1'  #, '0.3.0', :git => "git://github.com/ryanb/nested_form.git", :ref =>  'bd30e0b'
+gem 'rails3-jquery-autocomplete', '1.0.10'
+gem "cancan", ">= 1.6.7"
+gem 'bcrypt-ruby', '3.0.1'
+gem 'markitup-rails', '0.2.2'
+gem 'redcarpet', '2.2.2'
+gem "best_in_place", '1.1.2'
+
+
+group :assets do
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer', '0.10.2'
+  gem 'uglifier', '>= 1.0.3'
+  gem "susy"
+  gem 'compass', '>= 0.12.2'
+  gem 'compass-rails', '>= 1.0.3'
+  gem "bootstrap-sass-rails"
+end
+
+group :development do
+  gem 'sass', '~> 3.2.0.alpha' #to get rid of the deprication message
+  gem 'quiet_assets'
+  gem 'vagrant', '~> 1.0.5'
+  gem "vagrant-vbguest", "~> 0.5.1"
+  gem "rtags", git: "git://github.com/gaizka/rtags.git"
+end
+
+group :development, :test do
+  gem 'rspec-rails', '2.11.4'
+  gem 'fabrication', '2.5.0'
+  gem 'debugger', '1.2.1'
+end
+
+group :test do
+  gem 'cucumber-rails', '1.3.0', :require => false
+  gem 'faker', '1.1.2'
+  gem 'sqlite3', '1.3.6'
+  gem 'webmock', '1.8.11'
+  gem 'database_cleaner', '0.7.1'
+  gem 'launchy', '2.1.2'
+  gem 'vcr', '2.3.0'
+  gem 'zeus'
+  gem 'capybara_rails'
+  gem 'poltergeist'
+end
+
+
+group :docs do
+  gem 'yard-cucumber', '2.2.2', require: false
+  gem 'yard-rspec', '0.1', require: false
+  gem 'yard', '0.8.1'
+  # fm
+  gem 'diff-lcs', :require => false
+  gem 'cucumber_fm-core', '0.1', :require => 'cucumber_feature_manager'
+  gem 'cucumber-rails', '1.3.0', :require => false
+end
+
+group :staging do
+  gem 'memcache-client'
+end
+
+
