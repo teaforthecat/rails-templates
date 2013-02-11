@@ -11,12 +11,8 @@ unless `which exiftool`.empty?
   require 'rubygems'
   require 'mini_exiftool'
   images.analyser.add :exifdata do |temp_object|
-
     MiniExiftool.new( temp_object.path ).to_hash
-  else
-    {}
   end
-end
 end
 
 images.configure_with(:rails) do |c|
