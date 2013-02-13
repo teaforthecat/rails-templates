@@ -61,18 +61,17 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', '0.10.2'
   gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
   gem "susy"
-  gem 'compass', '>= 0.12.2'
-  gem 'compass-rails', '>= 1.0.3'
+  # gem 'compass', '>= 0.12.2'
+  # gem 'compass-rails', '>= 1.0.3'
   gem "bootstrap-sass-rails"
 end
 
 group :development do
-  gem 'sass', '~> 3.2.0.alpha' #to get rid of the deprication message
   gem 'quiet_assets'
   gem 'vagrant', '~> 1.0.5'
   gem "vagrant-vbguest", "~> 0.5.1"
-  gem "rtags", git: "git://github.com/gaizka/rtags.git"
 end
 
 group :development, :test do
