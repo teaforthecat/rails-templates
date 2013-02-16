@@ -7,7 +7,12 @@ class FakeFileInput < SimpleForm::Inputs::StringInput
       html = ''
       html << @builder.input_field(attribute_name, as: :file)
       html << template.content_tag(:div, class: 'fakefile') do
-        @builder.input_field(:fake_file, {value: value})
+        template.content_tag(:div, class: 'input-append') do          
+          @builder.input_field(:fake_file, {value: value}) +
+          template.content_tag(:span, class: 'add-on') do
+            "<i class=\"icon-file\"></i>".html_safe
+          end
+        end
       end
       html.html_safe
     end
