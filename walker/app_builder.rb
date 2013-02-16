@@ -39,12 +39,19 @@ class AppBuilder < Rails::AppBuilder
     fake_file
     bootstrap
     generate :scaffold, "users"
+    route "resources :users"
+    layout
     rvmrc
   end
 
 
 
 private
+
+  def layout
+    remove_file 'app/views/layouts/application.html.erb'
+    template 'files/application.html.haml', 'app/views/layouts/application.html.haml'
+  end
 
   def rvmrc
     template 'files/.rvmrc', '.rvmrc'

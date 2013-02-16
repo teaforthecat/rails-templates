@@ -1,0 +1,20 @@
+!!!html
+%html
+  %head  
+  %title <%= @app_name.titleize %>
+  = stylesheet_link_tag    "application", :media => "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+
+  %body
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container
+          = link_to "<%= @app_name.titleize %>", root_path
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active= link_to "Nav Item", "#"
+
+    .container      
+      .row
+        = yield
