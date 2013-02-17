@@ -10,7 +10,7 @@
     .navbar.navbar-inverse
       .navbar-inner
         .container
-          = link_to "<%= @app_name.titleize %>", root_path
+          = link_to "<%= @app_name.titleize %>", root_path, class: 'brand'
           .nav-collapse.collapse
             %ul.nav
               %li.active= link_to "Nav Item", "#"
